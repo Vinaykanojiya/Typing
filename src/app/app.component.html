@@ -1,0 +1,19 @@
+<div class="container">
+  <div class="card" style="width: 30rem; margin: 120px auto;">
+    <div class="card-body text-center">
+      <h4 class="text-primary">Typing</h4>
+      <hr>
+      <p>
+        <span *ngFor="let letter of mydata.split(''); let i=index"
+         [class]="compare(letter,entereddata[i])">
+          {{letter}}
+        </span>
+      </p>
+      <input type="text" class="form-control my-3" #input (keyup)="onInput(input.value)" placeholder="Type here"
+        autofocus>
+    </div>
+    <div class=" my-3 text-success text-center" *ngIf="mydata===entereddata">
+      Successful
+    </div>
+  </div>
+</div>
